@@ -1,0 +1,9 @@
+{% extends "testapp/base.html" %}
+
+{% block content %}
+{% for Eier in eier %}
+<table>
+    <td>{{ Eier.fornavn }}</td>
+</table>
+{% endfor %}
+{% endblock %}
