@@ -1,0 +1,9 @@
+{% extends "testapp/base.html" %}
+
+{% block content %}
+{% for eier in eiere %}
+<table>
+    <td>Eier: {{ eier.fornavn }}<br>Antall hunder: {{ eier.antall_hunder }}<br><br></td>
+</table>
+{% endfor %}
+{% endblock %}

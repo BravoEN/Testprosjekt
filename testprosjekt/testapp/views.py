@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Hund, Eier
+from django.db.models import Count
 
 # Create your views here.
 def index(request):
@@ -9,6 +10,13 @@ def index(request):
     return render(request, 'testapp/index.html', context)
 
 def eierliste(request):
-    eier = Eier.objects.all()
-    context={'eier' : eier}
+    eiere = Eier.objects.all()
+    context={'eier' : eiere}
     return render(request, 'testapp/eierliste.html', context)
+
+def eier(request):
+    eiere = Eier.objects.annotate(antall_hunder=Count('hund'))
+    context = {
+        'eiere': eiere
+    }
+    return render(request, 'testapp/eier.html', context)
