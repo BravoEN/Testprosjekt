@@ -5,9 +5,7 @@ from django.db.models import Count
 
 # Create your views here.
 def index(request):
-    hunder = Hund.objects.all()
-    context = {'hunder' : hunder}
-    return render(request, 'testapp/index.html', context)
+    return render(request, 'testapp/index.html')
 
 def eierliste(request):
     eiere = Eier.objects.all()
@@ -29,3 +27,8 @@ def hundedetaljer(request):
         hunder = Hund.objects.filter(eier=eier)
         context = {'hunder' : hunder}
         return render(request, 'testapp/hundedetaljer.html', context)
+
+def hundeliste(request):
+    hunder = Hund.objects.all()
+    context = {'hunder' : hunder}
+    return render(request, 'testapp/hundeliste.html', context)
