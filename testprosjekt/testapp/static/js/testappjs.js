@@ -1,3 +1,3 @@
-function hundInfo() {
-    alert("Hund info kommer snart!");
+function lokalHundInfo() {
+    alert("Lokal");
 }

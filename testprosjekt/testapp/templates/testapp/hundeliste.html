@@ -1,9 +1,16 @@
 {% extends "testapp/base.html" %}
 
 {% block content %}
+<h1>Lokal</h1>
 {% for hund in hunder %}
 <table>
-    <td><button onclick="hundInfo()">{{ hund.navn }}</button></td>
+    <td><button onclick="lokalHundInfo()">{{ hund.navn }}</button></td>
+</table>
+{% endfor %}
+<h1>Global</h1>
+{% for hund in hunder %}
+<table>
+    <td><button onclick="globalHundInfo()">{{ hund.navn }}</button></td>
 </table>
 {% endfor %}
 {% endblock %}

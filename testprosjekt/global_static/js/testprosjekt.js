@@ -1,0 +1,3 @@
+function globalHundInfo() {
+    alert("Global");
+}
