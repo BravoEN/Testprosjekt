@@ -22,6 +22,8 @@ def eier(request):
     return render(request, 'testapp/eier.html', context)
 
 def hundedetaljer(request):
+    # Trenger ikke sende med post request, er tydelighvis mulig å sende info gjennom url'n
+    # så også mye lettere ut å gjøre det på den måten
     if request.method=='POST':
         eier = request.POST.get('detaljer')
         hunder = Hund.objects.filter(eier=eier)
