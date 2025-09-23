@@ -3,7 +3,8 @@
 {% block content %}
 {% for eier in eiere %}
 <table>
-    <td>Eier: {{ eier.fornavn }}<br>Antall hunder: {{ eier.antall_hunder }}<br><br></td>
+    <td>Eier: {{ eier.fornavn }}<br>
+        Antall hunder: {{ eier.antall_hunder }} <form action="{% url 'hundedetaljer' %}" method="post">{% csrf_token %}<Button type="submit" name="detaljer" value="{{ eier.id }}">Hundedetaljer</Button></form><br><br></td>
 </table>
 {% endfor %}
 {% endblock %}

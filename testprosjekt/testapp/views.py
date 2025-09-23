@@ -20,3 +20,10 @@ def eier(request):
         'eiere': eiere
     }
     return render(request, 'testapp/eier.html', context)
+
+def hundedetaljer(request):
+    if request.method=='POST':
+        eier = request.POST.get('detaljer')
+        hunder = Hund.objects.filter(eier=eier)
+        context = {'hunder' : hunder}
+        return render(request, 'testapp/hundedetaljer.html', context)
